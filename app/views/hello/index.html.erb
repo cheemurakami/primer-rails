@@ -1,11 +1,70 @@
 <div class="App">
-  <header class="App-header">
-    <img src="Octocat.png" class="App-logo" alt="logo" />
-    <p>
-      GitHub Codespaces <span class="heart">♥️</span> Rails
-    </p>
-    <p class="small">
-      Edit <code>app/views/hello/index.html.erb</code> and see changes live!
-    </p>
-  </header>
+  
+  <%= render(Primer::Box.new(display: :flex, m: 3, p: 3, justify_content: :center)) do %>  
+    <%= render(Primer::Box.new(display: :flex, direction: :column, m: 3, p: 3, justify_content: :center, flex_grow: 0)) do %>
+      <%= render(Primer::Box.new) do %>
+        <%= render(Primer::Beta::Avatar.new(src: "https://avatars.githubusercontent.com/u/60206746?v=4", alt: "@cheemurakami", size: 80, shape: :circle, href: "https://avatars.githubusercontent.com/u/60206746?v=4")) %>
+      <% end %>
+      <%= render(Primer::Beta::Text.new(tag: "p", text_align: :left, font_weight: :bold, mt: 3)) { "Chee" } %>
+      <%= render(Primer::Beta::Text.new(tag: "p", text_align: :left)) { "cheemurakami" } %>
+      <%= render(Primer::Beta::Button.new(
+          size: :medium,
+          block: true,
+          border: true,
+          bg: :inset,
+          font_weight: :bold,
+          border_radius: 1,
+        )) do |_c| %>
+          Follow
+      <% end %>
+      <%= render(Primer::Box.new(m: 3, display: :flex, align_items: :center )) do %>
+        <%= render(Primer::Beta::Octicon.new(:people, size: :small)) %>
+        <%= render(Primer::Beta::Text.new(tag: "p", text_align: :left, p: 3, m: 0)) { "6 followers ・ 0 Following" } %>
+      <% end %>
+    <% end %>
+  
+    <%= render(Primer::Box.new( display: :flex, m: 3, p: 3, justify_content: :space_between)) do %>
+      <%= render(Primer::Box.new(border: true, m: 3,  direction: :column, border_radius: 1 )) do %> 
+        <%= render(Primer::Box.new(m: 3, p: 3, display: :flex)) do %>
+          <%= render(Primer::Beta::Octicon.new(icon: :repo, size: :small, "aria-label": "icon", mr: 2)) %>
+          <%= render(Primer::Beta::Link.new(href: "https://github.com/gdomingu/honma-api", underline: :false, font_weight: :bold, mr: 2)) { "honma-api" } %>
+          <%= render(Primer::Beta::Label.new) { "Public" } %>
+        <% end %>
+        <%= render(Primer::Box.new(m: 3)) do %>
+          <%= render(Primer::Beta::Text.new(tag: "p", text_align: :left, p: 3)) { "A rails API for the honma dialect app" } %>
+
+        <% end %>
+        <%= render(Primer::Box.new(m: 3, display: :flex)) do %>
+          <%= render(Primer::Box.new(m: 3, display: :flex)) do %>
+            <%= render(Primer::Beta::Octicon.new(:circle, size: :small, mt: 1, mr: 2)) %> <%= render(Primer::Beta::Text.new(tag: "p", text_align: :left, m: 0, )) { "Ruby" } %>
+          <% end %>
+          <%= render(Primer::Box.new(m: 3, display: :flex)) do %>
+            <%= render(Primer::Beta::Octicon.new(:"repo-forked", size: :small,  mt: 1, mr: 2)) %><%= render(Primer::Beta::Text.new(tag: "p", text_align: :left, m: 0, )) { "2" } %>
+          <% end %>
+        <% end %>
+      <% end %>
+      
+
+      <%= render(Primer::Box.new(border: true, m: 3,  direction: :column,  border_radius: 1 )) do %> 
+        <%= render(Primer::Box.new(m: 3, p: 3, display: :flex)) do %>
+          <%= render(Primer::Beta::Octicon.new(icon: :repo, size: :small, "aria-label": "icon", mr: 2)) %>
+          <%= render(Primer::Beta::Link.new(href: "https://github.com/gdomingu/crystal_swap", underline: :false, font_weight: :bold)) { "crystal_swap" } %>
+          <%= render(Primer::Beta::Label.new) { "Public" } %>
+        <% end %>
+        <%= render(Primer::Box.new(m: 3)) do %>
+          <%= render(Primer::Beta::Text.new(tag: "p", text_align: :left, p: 3)) { "A place where people can trade crystals" } %>
+
+        <% end %>
+        <%= render(Primer::Box.new(m: 3, display: :flex)) do %>
+          <%= render(Primer::Box.new(m: 3, display: :flex)) do %>
+            <%= render(Primer::Beta::Octicon.new(:circle, size: :small, mt: 1, mr: 2)) %> <%= render(Primer::Beta::Text.new(tag: "p", text_align: :left, m: 0, )) { "Ruby" } %>
+          <% end %>
+          <%= render(Primer::Box.new(m: 3, display: :flex)) do %>
+            <%= render(Primer::Beta::Octicon.new(:"repo-forked", size: :small,  mt: 1, mr: 2)) %><%= render(Primer::Beta::Text.new(tag: "p", text_align: :left, m: 0, )) { "2" } %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+
+  <% end %>
 </div>
